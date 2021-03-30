@@ -55,3 +55,6 @@ Component.ts
 Component.html
 
 ![resultado3](https://i.ibb.co/W3DH1Ss/resultado3.png)
+
+## Colocando un tipado a las peticiones http 30/03/2021
+Primero debemos ingresar con el resultado de la petición de postman en formato `JSON` a la pagina `app.quicktype.io` y dejar el formato en tipo `TypeScript` de salida, copiamos los datos y creamos una nueva interface, luego reemplazamos el tipo de dato que entrega la peticion HTTP
