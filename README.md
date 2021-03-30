@@ -35,3 +35,8 @@ Validamos los datos en primer lugar, en la busqueda para que no tenga valores va
 ![Ref1](https://i.ibb.co/PDhb3Ks/control1.png)
 
 ![Ref2](https://i.ibb.co/8jmqXsP/control2.png)
+
+## Giphy Api Key - Giphy Developer 30/03/2021
+Para poder utilizar el `httpClientModule` se debe importar en el modulo que queremos utilizarlo, y luego inyectarlo en el `constructor` de nuestro `servicio`, para poder utilizar el http get y todas las opciones que nos brindara.
+
+![httpClientModule](https://i.ibb.co/V9KgCkY/httpclientget.png)

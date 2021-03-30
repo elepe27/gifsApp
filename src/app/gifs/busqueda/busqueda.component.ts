@@ -17,7 +17,7 @@ export class BusquedaComponent {
   buscar(){
     const value = this.txtBuscar.nativeElement.value;
 
-    if (value.trim().length===0) {
+    if (value.trim().length===0) { //validación de campo vacio
       return;
     }
     
