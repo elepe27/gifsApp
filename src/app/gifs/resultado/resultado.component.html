@@ -1,1 +1,21 @@
-<p>resultado works!</p>
+<!-- <ul>
+    <li *ngFor="let item of resultados">
+        {{item.title}}
+    </li>
+</ul> -->
+
+<div class="row">
+    <div *ngFor="let gif of resultados" class="col-md-3 col-sm-12">
+        <div class="card">
+            <img [src]="gif.images.downsized_medium.url" [alt]="gif.tittle" class="card-img-top">
+            <!-- al dejarlo en [] el valor lo tomara angular -->
+            <div class="card-body">
+                <p class="card-text">{{gif.title}}</p>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

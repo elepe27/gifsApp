@@ -40,3 +40,18 @@ Validamos los datos en primer lugar, en la busqueda para que no tenga valores va
 Para poder utilizar el `httpClientModule` se debe importar en el modulo que queremos utilizarlo, y luego inyectarlo en el `constructor` de nuestro `servicio`, para poder utilizar el http get y todas las opciones que nos brindara.
 
 ![httpClientModule](https://i.ibb.co/V9KgCkY/httpclientget.png)
+
+## Mostrar resultados 30/03/2021
+para mostrar resultados, debemos llamar al servicio desde el componente que lo vamos a utilziar, en este caso al `resultado.component.ts` debemos inyectarlo en el `constructor` y llamar el servicio, para esto nosotros debemos inicializar una nueva lista en el servicio llamada resultados, establecida como `public` y en la respuesta se lo asignamos a resultado (`public resultados : any[]= [];`, `this.resultados = resp.data;`) de momento la dejamos como `Any` en el componente donde usaremos el servicio debemos establecer un get Resultados con el retorno de la lista antes creada `return this.gifsService.resultados;` y ya podemos llamar los resultados desde nuestro `resultado.component.html`
+
+Servicio
+
+![resultado1](https://i.ibb.co/f1cGwx9/resultado1.png)
+
+Component.ts
+
+![resultado2](https://i.ibb.co/ZBj3M6M/resultado2.png)
+
+Component.html
+
+![resultado3](https://i.ibb.co/W3DH1Ss/resultado3.png)

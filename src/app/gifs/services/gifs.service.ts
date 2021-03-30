@@ -9,6 +9,9 @@ export class GifsService {
   private apiKey: string = 'mRYm3gtzMFFRDetWz3hiIsN225AF1DAB'; // api key de giphy
   private _historial : string []=[];
 
+  // To DO cambiar any por su tipo correspondiente
+  public resultados : any[]= [];
+
   get historial(){
     // this._historial = this._historial.splice(0,10);
     return [...this._historial]; //Rompe la referencia con el arreglo, por si se hace una modificación no afecte el arreglo
@@ -27,9 +30,10 @@ export class GifsService {
       this._historial = this._historial.splice(0,10); //corta entre el elemento 0 y el elemento 10 de la lista
     }
     //modulo de angular, que retorna observables, se puede realizar muchas manipulaciones
-    this.http.get('https://api.giphy.com/v1/gifs/search?api_key=mRYm3gtzMFFRDetWz3hiIsN225AF1DAB&q=Dragon ball z&limit=10')
+    this.http.get(`https://api.giphy.com/v1/gifs/search?api_key=mRYm3gtzMFFRDetWz3hiIsN225AF1DAB&q=${query}&limit=10`)
         .subscribe((resp:any) =>{ // al no saber typescript que formato es el que entrega, se coloca any para evitar errores
           console.log(resp.data);
+          this.resultados = resp.data; // se le anida los datos a resultados desde resp.data
         })
     
   }
