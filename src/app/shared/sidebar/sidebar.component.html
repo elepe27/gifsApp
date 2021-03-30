@@ -3,7 +3,7 @@
     <hr class="text-white">
     <div class="list-group list-reset">
         <a *ngFor="let item of historial" class="list-group-item list-group-item-action" href="#">
-            {{item}}
+             {{item | titlecase}} <!-- Capitaliza los datos -->
         </a>
     </div>
 </div>

@@ -28,3 +28,10 @@ Archivo Service
 Componente
 
 ![Component](https://i.ibb.co/hDnJXzk/gifservice-2.png)
+
+## Controlar el historial de busqueda 30/03/2021
+Validamos los datos en primer lugar, en la busqueda para que no tenga valores vacios (ref 1), luego en el servicio, verificamos si el dato esta ingresado ya o no, con la validación del `includes`, en el caso del ejemplo sería `!` la negación de esto y se agrega (ref 2) y también se realiza un `splice` para que solo muestre los datos desde el 0 al 10.
+
+![Ref1](https://i.ibb.co/PDhb3Ks/control1.png)
+
+![Ref2](https://i.ibb.co/8jmqXsP/control2.png)
