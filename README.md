@@ -18,3 +18,13 @@ El viewChild cumple la función de retornar los elementos de un html, el cual se
 
 El tipo es ElementRef, y para las versiones màs nuevas de angular se utiliza el operador `!` para no tener problemas de que pueda o `no` existir el elemento que nos indica `TypeScript`.
 
+## Gifs services 30/03/2021
+Primero se debe crear el servicio `ng g s gifs/services/gifs --skipTests` esto creara el servicio sin el archivo de pruebas, luego debemos crear nuestra lista de historial en el servicio `private _historial : string []=[];` y hacemos su get correspondiente, creamos nuestra función `buscarGifs()` en donde se agregara a la lista la busqueda con un `unshift` la cual agrega el ultimo elemento al principio del arreglo, luego se llama del componente realizando una inyección del servicio realizando el get del historial.
+
+Archivo Service
+
+![gifService](https://i.ibb.co/4Wq3vkV/gfs-Service.png)
+
+Componente
+
+![Component](https://i.ibb.co/hDnJXzk/gifservice-2.png)
