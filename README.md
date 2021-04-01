@@ -70,3 +70,14 @@ Para cargar los datos en el `localStorage` lo podemos hacer en el metodo de busq
 Para guardar los resultados realizamos un ejercicio similar al anterior en el constructor a los `Resultados` le cargamos de la siguiente manera `this.resultados = JSON.parse(localStorage.getItem('resultados'));` y para cargar el `localStorage` lo hacemos de la siguiente manera ` localStorage.setItem('resultados',JSON.stringify(resp.data));` esto se realiza en la solicitud del `http.get`.
 
 ![LocalStorageResultado](https://i.ibb.co/zmKz7M4/localstorageresultados.png)
+
+## Mostrar resultados desde Sidebar
+en primer lugar debemos crear una función en el sidebar llamada `buscar()` en la que se espera un valor de busqueda, por el lado del html se le ingresar el `item` del recorrido de la lista historial, luego debemos crear en el archivo `ts` del sidebar el metodo `buscar(value:string){` el cual debemos llamar al servicio y entregar el valor usando `this.gifsService.buscarGifs(value);` de esta manera cargara el resultado dependiendo del boton que vamos clickeando
+
+HTML
+
+![busquedaresult1](https://i.ibb.co/BCY4WHR/busquedaresult1.png)
+
+TS
+
+![busquedaresult2](https://i.ibb.co/CWb8r6N/busquedaresult2.png)

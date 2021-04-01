@@ -22,7 +22,7 @@ export class GifsService {
     // el arreglo de historial se carga en el constructor porque es una sola ejecución que se realiza
     if (localStorage.getItem('historial')) {
       this._historial = JSON.parse(localStorage.getItem('historial')!);
-      this.resultados = JSON.parse(localStorage.getItem('resultados'))
+      this.resultados = JSON.parse(localStorage.getItem('resultados'));
       //el contrario del stirngify es el parse, y que solo se puede transformar a un objeto
     }
     

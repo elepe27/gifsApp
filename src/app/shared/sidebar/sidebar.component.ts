@@ -14,15 +14,22 @@ export class SidebarComponent {
 
   historico : string[]=[];
 
+
   get historial(){
     return this.gifsService.historial;
   }
+ 
    
 constructor(private gifsService:GifsService){ // se inyecta el servicio
 
   
   
 }
+
+buscar(value:string){
+
+  this.gifsService.buscarGifs(value);
+};
 
 
 
