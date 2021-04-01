@@ -18,7 +18,13 @@ export class GifsService {
     return [...this._historial]; //Rompe la referencia con el arreglo, por si se hace una modificación no afecte el arreglo
   }
   constructor(private http:HttpClient){ // se inyecta el servicio de httpclient
-
+    // this._historial = localStorage.getItem('historial');
+    // el arreglo de historial se carga en el constructor porque es una sola ejecución que se realiza
+    if (localStorage.getItem('historial')) {
+      this._historial = JSON.parse(localStorage.getItem('historial')!);
+      //el contrario del stirngify es el parse, y que solo se puede transformar a un objeto
+    }
+    
   }
 
   buscarGifs(query: string=''){
@@ -29,6 +35,9 @@ export class GifsService {
     if (!this._historial.includes(query)) { // si no incluye el elemento, entonces lo va a insertar '!'
       this._historial.unshift(query );
       this._historial = this._historial.splice(0,10); //corta entre el elemento 0 y el elemento 10 de la lista
+      
+      localStorage.setItem('historial',JSON.stringify(this._historial)); // para poder guardar un arreglo de string
+      // en el localstorage se usa JSON.stringify y este convierte todo a un string
     }
     //modulo de angular, que retorna observables, se puede realizar muchas manipulaciones
     //se le agrega el tipo SearchGifsResponse

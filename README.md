@@ -58,3 +58,10 @@ Component.html
 
 ## Colocando un tipado a las peticiones http 30/03/2021
 Primero debemos ingresar con el resultado de la petición de postman en formato `JSON` a la pagina `app.quicktype.io` y dejar el formato en tipo `TypeScript` de salida, copiamos los datos y creamos una nueva interface, luego reemplazamos el tipo de dato que entrega la peticion HTTP
+
+## LocalStorage 01/04/2021
+Sirve para guardar información persistente en el tiempo, hasta que el navegador o el usuario desee eliminarlo, esto lo usaremos para guardar el historial de las busquedas en el navegador y al recargar no se pierdan los datos.
+
+Para cargar los datos en el `localStorage` lo podemos hacer en el metodo de busqueda, de la siguiente manera `localStorage.setItem('historial',JSON.stringify(this._historial));` como el metodo `setItem` del `localStorage` solo admite string, se convierte a traves de `JSON.stringify` para pasar todo a `string`, y para `cargar` los datos al arreglo del historial lo hacemos en el `constructor` debido a que este se ejecuta en una instancia y es llamado una vez, de la siguiente manera
+
+![constructorLocalStorage](https://i.ibb.co/pnKX9jF/consturctorlocalstorager.png)
