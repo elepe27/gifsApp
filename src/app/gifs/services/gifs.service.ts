@@ -22,6 +22,7 @@ export class GifsService {
     // el arreglo de historial se carga en el constructor porque es una sola ejecución que se realiza
     if (localStorage.getItem('historial')) {
       this._historial = JSON.parse(localStorage.getItem('historial')!);
+      this.resultados = JSON.parse(localStorage.getItem('resultados'))
       //el contrario del stirngify es el parse, y que solo se puede transformar a un objeto
     }
     
@@ -41,10 +42,12 @@ export class GifsService {
     }
     //modulo de angular, que retorna observables, se puede realizar muchas manipulaciones
     //se le agrega el tipo SearchGifsResponse
+
     this.http.get<SearchGifsResponse>(`https://api.giphy.com/v1/gifs/search?api_key=mRYm3gtzMFFRDetWz3hiIsN225AF1DAB&q=${query}&limit=10`)
         .subscribe((resp) =>{ // al no saber typescript que formato es el que entrega, se coloca any para evitar errores
           console.log(resp.data);
           this.resultados = resp.data;// se le anida los datos a resultados desde resp.data
+          localStorage.setItem('resultados',JSON.stringify(resp.data));
         })
     
   }

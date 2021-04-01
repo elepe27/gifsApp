@@ -65,3 +65,8 @@ Sirve para guardar información persistente en el tiempo, hasta que el navegador
 Para cargar los datos en el `localStorage` lo podemos hacer en el metodo de busqueda, de la siguiente manera `localStorage.setItem('historial',JSON.stringify(this._historial));` como el metodo `setItem` del `localStorage` solo admite string, se convierte a traves de `JSON.stringify` para pasar todo a `string`, y para `cargar` los datos al arreglo del historial lo hacemos en el `constructor` debido a que este se ejecuta en una instancia y es llamado una vez, de la siguiente manera
 
 ![constructorLocalStorage](https://i.ibb.co/pnKX9jF/consturctorlocalstorager.png)
+
+## Cargar imágenes automáticamente 01/04/2021
+Para guardar los resultados realizamos un ejercicio similar al anterior en el constructor a los `Resultados` le cargamos de la siguiente manera `this.resultados = JSON.parse(localStorage.getItem('resultados'));` y para cargar el `localStorage` lo hacemos de la siguiente manera ` localStorage.setItem('resultados',JSON.stringify(resp.data));` esto se realiza en la solicitud del `http.get`.
+
+![LocalStorageResultado](https://i.ibb.co/zmKz7M4/localstorageresultados.png)
