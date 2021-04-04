@@ -97,3 +97,7 @@ luego debemos importar el httpParams de `@angular/common/http` de la siguiente m
 finalmente podemos centralizar toda la busqueda, y tendremos el mismo resultado
 
 ![httparams3](https://i.ibb.co/GPTmbZ7/httpparams3.png)
+
+
+## Animated 04/04/2021
+Se agrega estilos de animación animated.css

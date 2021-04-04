@@ -52,11 +52,11 @@ export class GifsService {
     .set('limit','10')
     .set('q',query);
 
-    console.log(params.toString());
+    
 
     this.http.get<SearchGifsResponse>(`${this.servicioUrl}/search`,{params}) // los parametros van entre llaves {}
         .subscribe((resp) =>{ // al no saber typescript que formato es el que entrega, se coloca any para evitar errores
-          console.log(resp.data);
+          
           this.resultados = resp.data;// se le anida los datos a resultados desde resp.data
           localStorage.setItem('resultados',JSON.stringify(resp.data));
         })
