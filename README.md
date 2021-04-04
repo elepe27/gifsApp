@@ -81,3 +81,6 @@ HTML
 TS
 
 ![busquedaresult2](https://i.ibb.co/CWb8r6N/busquedaresult2.png)
+
+## Obtener imagenes desde el sidebar
+Primero debemos crear un metodo en el `sidebar.component.ts` que se llame buscar, con un argumento, el cual sera el item que se seleccione del `<a></a></a>` y este llamar al servicio de busqueda de la imagen
