@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Gif, SearchGifsResponse } from '../interface/gifs.interface';
 
@@ -8,6 +8,7 @@ import { Gif, SearchGifsResponse } from '../interface/gifs.interface';
 export class GifsService {
 
   private apiKey: string = 'mRYm3gtzMFFRDetWz3hiIsN225AF1DAB'; // api key de giphy
+  private servicioUrl: string = 'https://api.giphy.com/v1/gifs'; // centralizamos el url
   private _historial : string []=[];
 
   // Cambiamos el tipo a GIF de la interface
@@ -17,6 +18,9 @@ export class GifsService {
     // this._historial = this._historial.splice(0,10);
     return [...this._historial]; //Rompe la referencia con el arreglo, por si se hace una modificación no afecte el arreglo
   }
+  
+
+
   constructor(private http:HttpClient){ // se inyecta el servicio de httpclient
     // this._historial = localStorage.getItem('historial');
     // el arreglo de historial se carga en el constructor porque es una sola ejecución que se realiza
@@ -43,7 +47,14 @@ export class GifsService {
     //modulo de angular, que retorna observables, se puede realizar muchas manipulaciones
     //se le agrega el tipo SearchGifsResponse
 
-    this.http.get<SearchGifsResponse>(`https://api.giphy.com/v1/gifs/search?api_key=mRYm3gtzMFFRDetWz3hiIsN225AF1DAB&q=${query}&limit=10`)
+    const params = new HttpParams() // por cada parametro se le establece lineas de .set
+    .set('api_key',this.apiKey)
+    .set('limit','10')
+    .set('q',query);
+
+    console.log(params.toString());
+
+    this.http.get<SearchGifsResponse>(`${this.servicioUrl}/search`,{params}) // los parametros van entre llaves {}
         .subscribe((resp) =>{ // al no saber typescript que formato es el que entrega, se coloca any para evitar errores
           console.log(resp.data);
           this.resultados = resp.data;// se le anida los datos a resultados desde resp.data

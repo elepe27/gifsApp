@@ -71,7 +71,7 @@ Para guardar los resultados realizamos un ejercicio similar al anterior en el co
 
 ![LocalStorageResultado](https://i.ibb.co/zmKz7M4/localstorageresultados.png)
 
-## Mostrar resultados desde Sidebar
+## Mostrar resultados desde Sidebar 01/04/2021
 en primer lugar debemos crear una función en el sidebar llamada `buscar()` en la que se espera un valor de busqueda, por el lado del html se le ingresar el `item` del recorrido de la lista historial, luego debemos crear en el archivo `ts` del sidebar el metodo `buscar(value:string){` el cual debemos llamar al servicio y entregar el valor usando `this.gifsService.buscarGifs(value);` de esta manera cargara el resultado dependiendo del boton que vamos clickeando
 
 HTML
@@ -82,5 +82,18 @@ TS
 
 ![busquedaresult2](https://i.ibb.co/CWb8r6N/busquedaresult2.png)
 
-## Obtener imagenes desde el sidebar
-Primero debemos crear un metodo en el `sidebar.component.ts` que se llame buscar, con un argumento, el cual sera el item que se seleccione del `<a></a></a>` y este llamar al servicio de busqueda de la imagen
+## Obtener imagenes desde el sidebar 04/04/2021
+Primero debemos crear un metodo en el `sidebar.component.ts` que se llame buscar, con un argumento, el cual sera el item que se seleccione del `<a></a></a>` y este llamar al servicio de busqueda de la imagen.
+
+## HttpParams 04/04/2021
+Para colocar parametros en nuestro servicio, primero debemos centralizar nuestro `URL` colocandola en una variable al comienzo de la clase
+
+![httparams1](https://i.ibb.co/5MCxqJT/httpparams1.png)
+
+luego debemos importar el httpParams de `@angular/common/http` de la siguiente manera, y definir los parametros con `.set`
+
+![httparams2](https://i.ibb.co/NxbDcwY/httpparams2.png)
+
+finalmente podemos centralizar toda la busqueda, y tendremos el mismo resultado
+
+![httparams3](https://i.ibb.co/GPTmbZ7/httpparams3.png)
